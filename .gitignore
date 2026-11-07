@@ -1,0 +1,26 @@
+node_modules
+
+# Output
+.output
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Photos stay out of the repository unless listed here on purpose.
+# Published: the About portrait, and the About page's photos (listed in src/lib/data/photos.ts).
+*.jpg
+!src/lib/assets/portrait.jpg
+!static/photos/*.jpg

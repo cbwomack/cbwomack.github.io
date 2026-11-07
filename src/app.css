@@ -1,0 +1,201 @@
+/*
+ * Site-wide tokens, font and base styles.
+ * IBM Plex Sans variable (weights 100 to 700, widths 75% to 100%), SIL OFL 1.1: static/fonts/OFL.txt.
+ *
+ * Text: running text 20 px (18 px on phones), line spacing 1.6, about 66 characters a line,
+ * left-aligned, +0.02em letter and word spacing, emphasis by weight 600, nothing smaller than 16 px.
+ *
+ * Light mode only for now. TODO(dark mode): the first follow-up. Add a prefers-color-scheme block that
+ * flips --paper/--ink/--muted/--tint/--rule (contrast checked again), set color-scheme to "light dark",
+ * and remount the Disc with range [0.1, 1] so its dark end does not vanish into a dark ground.
+ */
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	src: url('/fonts/IBMPlexSans-Var.ttf') format('truetype');
+	font-weight: 100 700;
+	font-stretch: 75% 100%;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	color-scheme: light;
+
+	/* Contrast on --paper: ink 12.6, link 6.4, muted 6.0. On --tint: 11.5, 5.8, 5.5. */
+	--paper: #e9edee;
+	--ink: #23282c;
+	--link: #27568d;
+	--link-hover: #173a63;
+	--muted: #4f5a60;
+	--tint: #dde3e5;
+	/* Decorative lines only (2.6:1): never text, never a box. */
+	--rule: #8b9499;
+
+	--gutter: 24px;
+	--measure: 33em;
+	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (max-width: 640px) {
+	:root {
+		--gutter: 16px;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	background: var(--paper);
+}
+
+body {
+	margin: 0;
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: 'IBM Plex Sans', system-ui, sans-serif;
+	font-size: 20px;
+	line-height: 1.6;
+	letter-spacing: 0.02em;
+	word-spacing: 0.02em;
+	font-synthesis: none;
+	/* clip, not hidden: hidden makes body a scroll container and breaks position: sticky. */
+	overflow-x: clip;
+}
+
+@media (max-width: 640px) {
+	body {
+		font-size: 18px;
+	}
+}
+
+main {
+	flex: 1;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+	margin: 0;
+}
+
+ul,
+ol {
+	padding: 0;
+	list-style: none;
+}
+
+strong,
+b {
+	font-weight: 600;
+}
+
+a {
+	color: var(--link);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+/* Hover changes colour only, quickly, and only where a real pointer hovers. */
+@media (hover: hover) and (pointer: fine) {
+	a {
+		transition: color 120ms var(--ease-out);
+	}
+
+	a:hover {
+		color: var(--link-hover);
+	}
+}
+
+:focus-visible {
+	outline: 2px solid var(--link);
+	outline-offset: 3px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.skip-link {
+	position: absolute;
+	left: var(--gutter);
+	top: -100px;
+	z-index: 100;
+	padding: 8px 16px;
+	background: var(--ink);
+	color: var(--paper);
+}
+
+.skip-link:focus {
+	top: 16px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Inner pages: one left-aligned reading column on the same outer margins as Home. */
+.page {
+	padding: 48px var(--gutter) 96px;
+}
+
+.page > * {
+	max-width: var(--measure);
+}
+
+/* Inner-page title: about 45 px, weight 400, in the monument's condensed width. */
+.page-title {
+	font-size: clamp(36px, 3.2vw, 46px);
+	font-weight: 400;
+	font-stretch: 85%;
+	line-height: 1.1;
+	letter-spacing: 0;
+}
+
+.section-title {
+	margin-top: 64px;
+	font-size: 27px;
+	font-weight: 500;
+	font-stretch: 85%;
+	line-height: 1.25;
+	letter-spacing: 0;
+}
+
+.muted {
+	color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-delay: 0ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		transition-delay: 0ms !important;
+		transition-duration: 1ms !important;
+	}
+}

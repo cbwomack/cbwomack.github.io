@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://cbwomack.github.io/sitemap.xml

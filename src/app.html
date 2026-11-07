@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light" />
+		<meta name="theme-color" content="#e9edee" />
+		<link
+			rel="preload"
+			href="/fonts/IBMPlexSans-Var.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+		/>
+		<!-- Before first paint: html.motion gates Home's opening sequence, so without script or with
+		     reduced motion every page simply shows everything at once. -->
+		<script>
+			if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+				document.documentElement.classList.add('motion');
+		</script>
+		<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		%sveltekit.head%
+	</head>
+	<body>
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
