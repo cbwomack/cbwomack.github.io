@@ -25,9 +25,9 @@ export const publications: Publication[] = [
 		title: 'Optimal scenario design for climate emulation',
 		authors:
 			'Womack, C. B., Bouabid, S., Sokolov, A., Salunke, P., Flierl, G., Eastham, S. D., & Selin, N. E.',
-		venue: 'Proceedings of the National Academy of Sciences, in press (arXiv:2606.19302)',
+		venue: 'Proceedings of the National Academy of Sciences, 123 (46) e2620731123',
 		year: 2026,
-		link: 'https://arxiv.org/abs/2606.19302',
+		link: 'https://www.pnas.org/doi/10.1073/pnas.2620731123',
 		abstract:
 			'Shows that training-data structure, not just model architecture, limits emulator predictive skill, and uses a differentiable climate model to iteratively design emission scenarios optimized for emulator training. An emulator trained on a single optimized scenario outperforms one trained on six standard ScenarioMIP pathways while using less data overall.',
 		category: 'publication'
@@ -170,7 +170,7 @@ export const publications: Publication[] = [
 			'Assessing spatially explicit sensitivities to scenario uncertainty through climate emulation',
 		authors:
 			'Womack, C. B., Bouabid, S., Gao, X., Morris, J., Schlosser, C. A., Flierl, G., & Selin, N. E.',
-		venue: 'ESS Open Archive, doi:10.22541/essoar.15008111/v1',
+		venue: 'Preprint, ESS Open Archive, doi:10.22541/essoar.15008111/v1',
 		year: 2026,
 		link: 'https://doi.org/10.22541/essoar.15008111/v1',
 		abstract:
@@ -181,7 +181,7 @@ export const publications: Publication[] = [
 		title: 'A review of spatially explicit climate emulators as agile tools for decision-support',
 		authors:
 			'Schöngart, S., Gudmundsson, L., Womack, C. B., Schleussner, C.-F., & Seneviratne, S. I.',
-		venue: 'Research Square, doi:10.21203/rs.3.rs-11205768/v1',
+		venue: 'Preprint, Research Square, doi:10.21203/rs.3.rs-11205768/v1',
 		year: 2026,
 		link: 'https://doi.org/10.21203/rs.3.rs-11205768/v1',
 		abstract:

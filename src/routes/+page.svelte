@@ -16,7 +16,7 @@
 
 	// The highlighted papers, with a short venue label each.
 	const picks = [
-		{ title: 'Optimal scenario design for climate emulation', venue: 'PNAS, in press, 2026' },
+		{ title: 'Optimal scenario design for climate emulation', venue: 'PNAS, 2026' },
 		{
 			title:
 				'A theoretical framework to understand sources of error in Earth System Model emulation',
